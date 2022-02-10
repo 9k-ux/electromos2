@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+
+        .container{
+            background-color: rgb(255, 255, 255);
+        
+        }
+        .logo{
+            height: 30px;
+            margin-top: -5px;
+            margin-right: 5px;
+        }
+
+        .span1{
+            font-size: 14px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 100;
+            color: rgb(88, 88, 88);
+            margin: 5px;
+        }
+        .span2{
+         font-size: 16px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 100;
+            color: rgb(63, 63, 63);
+            margin: 5px;   
+        }
+       .tocTag{
+           font-size: 16px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 100;
+            color: rgb(63, 63, 63);
+        }
+        .normalP{
+            font-size: 16px;
+        }
+        .boldSpan{
+            font-weight: bold;
+        }
+        .pink{
+            background-color:rgb(255, 233, 252) !important ;
+        }
+        .fontRed{
+            color: rgb(182, 69, 69);
+        }
+        .command{
+            background-color: rgb(238, 238, 238) !important;
+        }
+
+        i:hover{
+            cursor: pointer;
+        }
+        .rotate {
+    -moz-transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+.rotate.down {
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    transform:rotate(90deg);
+}
+        .rotate2 {
+    -moz-transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+.rotate2.down {
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    transform:rotate(90deg);
+}
+        .rotate3 {
+    -moz-transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+.rotate3.down {
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    transform:rotate(90deg);
+}
+
+      @media only screen and (max-width: 600px) {
+        .up{
+          height: 200px !important;
+        }
+        .ras{
+            height: 130px !important;
+            top: 120px !important;
+        }
+        .Rpi{
+            height: 300px;
+        }
+        .GPI{
+            height: 250px;
+        }
+        .GPI-0{
+            height: 580px;
+        }
+        .etcher{
+            height: 200px;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+      
+    <img
+      style="height: 300px"
+      src="images/upperImg.jpg"
+      class="img-fluid up"
+      alt="Responsive image"
+    />
+    <img
+      style="height: 190px; position: absolute; left: 20%; top: 200px"
+      src="images/raspberry-512.png"
+      class="img-fluid  ras"
+      alt="Responsive image"
+    />
+    <div class="container col-12 col-sm-10 col-md-8 ">
+        <h1 style="margin-top: 150px;">Raspberry Pi - Overview, Setup</h1 style="margin-top: 100px;">
+        <hr>
+        <div>
+            <div style="display: flex;">
+                <img src="images/logo3.png" class="logo" alt="LOGO">
+                <h6>Electromos IIT Bhilai <span class="span1">Jul 31, 2021</span></h6>
+            </div>
+            <div>
+                <h6 style="margin-left:34px;">Contributers :<span class="span2">Rithvika Pervala, Mrinal Gupta, Chandan Singh, Vivek Shirdhonkar</span></h6>
+            </div>
+            
+           
+            
+        </div>
+        <hr>
+        <div style="display: flex; background-color: rgb(255, 233, 252);">
+             <i style="margin-left: 15px;" class="fa fa-caret-right fa-2x rotate"></i>
+             <h5 style="margin-left: 20px; margin-top: 3px;">Table of Contents</h5>
+        </div>
+        <div id="tableOfContent" style="display: none; background-color:rgb(255, 233, 252);">
+            <div style=" padding: 10px; margin-left: 40px;">
+                <a class="tocTag" href="#Introduction">Introduction</a><br>
+                <a class="tocTag" href="#ComponentsOverview">Components Overview</a>
+                <div style="margin-left: 40px; padding: 10px;">
+                    <a class="tocTag" href="#raspberryPiModel4B">raspberry PiModel 4B</a><br>
+                    <a class="tocTag" href="#gpioPin">GPIO PIN</a>
+                </div>
+                <a class="tocTag" href="#installation">Installation</a>
+                <div style="margin-left: 40px; padding: 10px;">
+                    <a class="tocTag" href="#flashing">Flashing</a>
+                    <div style="margin-left: 40px; padding: 10px;">
+                        <a class="tocTag" href="#balenaItcher">Balena Itcher</a><br>
+                        <a class="tocTag" href="#raspberryPiImager">Raspberry Pi Imager</a>
+                    </div>
+                
+                    <a class="tocTag" href="#headlessSetup">Headless Setup</a>
+                
+                    <div style="margin-left: 40px; padding: 10px;">
+                        <a class="tocTag" href="#ssh">SSH</a><br>
+                        <a class="tocTag" href="#vnc">VNC</a>
+                    </div>
+                </div>
+                <a class="tocTag" href="#whatNext">What Next</a>
+            </div>
+        </div>
+        <hr>
+        <div id="Introduction">
+            <h2>Introduction</h2>
+            <p class="noramalP">The <span class="boldSpan"> Raspberry Pi </span>
+                 is a range of one of the most popular <span class="boldSpan"> Single-Board Computers</span>. It has <span class="boldSpan">CPU, RAM, Storage </span>
+                  many more functionalities like <span class="boldSpan">WiFi, Bluetooth </span>
+                  all in just a credit-card sized board. It is low cost and is generally aimed towards learning audience like students and education systems.</p>
+                <br><br>
+            <p class="normalP">
+                As of writing, the Raspberry Pi Foundation has released 13 Single Board Computer models through 3 series <span class="boldSpan">(A, B and Zero)</span> since 2012.
+            </p>
+            <div style="display: flex; background-color: rgb(255, 233, 252); padding: 30px; ">
+                <div class="col-4">
+                    <h4 class="fontRed ml-3">
+                    Series A
+                    </h4>
+                    <ul>
+                        <li> Lower Cost, Lower Specs</li>
+                        <li>No Ethernet Port, One </li>
+                        <li>Less amount of RAM</li>
+                    </ul>
+                    
+                </div>
+                <div class="col-4">
+                    <h4 class="fontRed ml-3">
+                    Series B
+                    </h4>
+                    <ul>
+                        <li>
+                            More Cost, Best Specs
+                        </li>
+                        <li>
+                            More Components and Ports
+                        </li>
+                        <li>
+                            High RAM
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4">
+                    <h4 class="fontRed ml-3 ">
+                    Series Zero
+                    </h4>
+                    <ul>
+                        <li>Lowest Cost, Size</li>
+                        <li>No Ports</li>
+                        <li>Lowest RAM</li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <p class="normalP">However, <span class="boldSpan"> Embedded Systems</span> are where RPi's true potential is manifested. It's ability to easily communicate with the outside world makes it reliable for wide range of projects and ecosystems. From using it in <a style="color: rgb(238, 117, 117); font-size: 17px;" href="https://www.instagram.com/p/CQBH0O-H4iN/">Astro Pi Space Project</a> to using it in Smart Home Assistance System and Music Projects, Raspberry Pi has deemed itself to be very versatile and user friendly.</p>
+            <br>
+            <iframe height="400" width="100%"
+      src="https://www.youtube.com/embed/uXUjwk2-qx4">
+   </iframe>
+   <br>
+   <br>
+   <aside class="pink" style="padding: 13px; padding-left: 15px;">
+<img src="images/rasberry.png" alt="img" width="29px" /> From here on we will be calling the Raspberry Pi as <span class="boldSpan"> RPi.</span>
+
+</aside>
+
+        </div>
+        <br>
+        <hr>
+        <div id="ComponentsOverview">
+            <h2>Components Overview</h2>
+
+
+        </div>
+        <br>
+        <div id="raspberryPiModel4B">
+
+
+        <h3>Raspberry Pi Model 4B</h3>
+
+            <p style="font-size: 22px;"><ul> <li>The below image describes the Specifications of <span class="boldSpan"> RPi 4 Model B,</span> the latest product as of writing from the Raspberry Pi Foundation.
+            </li></ul></p>
+            <br>
+            <img class="Rpi" src="images/Rpi_4B_Overview.png" height="730px" width="100%" alt="Rpi 4B">
+            <div class="d-lg-flex">
+                <img src="images/pi-plug-in.gif" class="col-10 col-lg-8 col-sm-10" height="270px" style="margin: 20px;" alt="Pi-Plugin">
+                <p class="normalP mt-3" ><span class="boldSpan">RPi 4B</span> key features include a high-performance 64-bit quad-core processor, dual-display support at resolutions up to 4K via a pair of micro-HDMI ports, hardware video decode at up to 4Kp60, up to 8GB of RAM, dual-band 2.4/5.0 GHz wireless LAN, Bluetooth 5.0, Gigabit Ethernet, USB 3.0, and PoE capability (via a separate PoE HAT add-on).
+</p>
+            </div>
+        </div>
+        <div id="gpioPin">
+        <h3>GPIO Pins</h3>
+        <p style="font-size: 22px;"><ul> <li><span class="boldSpan">GPIO (General Purpose Input/Output) </span>is the standard interface through which we connect the RPi with <span class="boldSpan">sensors</span> and <span class="boldSpan">actuators</span> to collect or send data.
+            </li></ul></p>
+        <p style="font-size: 22px;"><ul> <li>A 40-pin GPIO header is found on all current Raspberry Pi boards. </li></ul></p>
+             <div style="display: flex; background-color: rgb(255, 233, 252); padding: 30px; ">
+                <div class="col-6">
+                   
+                    <ul>
+                        <li> 
+                            GPIO pins - 28
+                        </li>
+                        <br>
+                        <li>
+                            Ground - 8
+                        </li>
+                    </ul>
+                    
+                </div>
+                <div class="col-6">
+                    
+                    <ul>
+                        <li>
+                            5V supply - 2
+                        </li>
+                        <br>
+                        <li>
+                            3.3V supply - 2
+                        </li>
+                       
+                    </ul>
+                </div>
+               
+            </div>
+            <img src="./images/img2.png" class="GPI" height="530px" width="100%" alt="GPIO-Pin">
+             <aside class="pink" style="padding: 13px; padding-left: 15px;">
+            <img src="images/rasberry.png" alt="img" width="29px" />  GPIO pins 0 and 1 (<span class="boldSpan">ID_SD</span> and <span class="boldSpan">ID_SC</span>) are reserved for <span class="boldSpan">HAT ID EEPROM</span>. Do not tinker with these pins unless absolutely necessary and you know what you're doing!
+            </aside>
+             <p style="font-size: 22px;"><ul> <li>To get a handy reference for Pin layout, open the RPi terminal and type the following command:</li></ul></p>
+                <aside class="command col-11 ml-auto" style="padding: 23px; padding-left: 30px;">
+                    pinout
+                </aside>
+                <br>
+            <center><img src="./images/img3.png" class="GPI-0" height="600px"  alt="GPIO-Zero"></center>
+            <br>
+            <aside class="pink" style="padding: 13px; padding-left: 15px;">
+            <img src="images/rasberry.png" alt="img" width="29px" /><span class="command p-1 text-danger"> pinout</span> command is provided by the <a href="https://gpiozero.readthedocs.io/en/stable/"> <span class="text-danger font-weight-bold"> GPIO Zero </span></a>Python library, which is installed by default on the Raspberry Pi OS Desktop image.
+            </aside>
+            <hr>
+            <br>
+        </div>
+        <div id="installation">
+            <h3>Installation</h3>
+            <p style="font-size: 22px;"><ul><li> Before going any further make sure you have at least the following equipment with you.</li></ul></p>
+            <div class="d-flex">
+                        <div class="col-6">
+                            <div style="display: flex; background-color: rgb(255, 233, 252);">
+                    <i style="margin-left: 15px;" class="fa fa-caret-right fa-2x rotate2"></i>
+                    <h6 style="margin-left: 15px; margin-top: 7px; color: red;">Required</h6>
+                </div>
+                <div id="tableOfContent2" style="display: none; background-color:rgb(255, 233, 252);">
+                    <div style=" padding: 0px; margin-left: 20px;">
+                        <ul>
+                       <li>RPi (Obviously)</li><br>
+
+                        <li>SD Card for Flashing (8GB Min)</li><br>
+
+                        <li>PC or Laptop</li><br>
+
+                        <li>Power Supply</li><br>
+
+                       </ul>
+                    </div>
+                </div>
+                        </div>
+                        <div class="col-6">
+                            <div style="display: flex; background-color: rgb(255, 233, 252);">
+                    <i style="margin-left: 15px;" class="fa fa-caret-right fa-2x rotate3"></i>
+                    <h6 style="margin-left: 15px; margin-top: 7px; color: red;">Optional</h6>
+                </div>
+                <div id="tableOfContent3" style="display: none; background-color:rgb(255, 233, 252);">
+                    <div style=" padding: 0px; margin-left: 0px;">
+                        <ul>
+                       <li>Monitor</li><br>
+
+                        <li>HDMI cable</li><br>
+
+                        <li>Keyboard</li><br>
+
+                        <li>Mouse</li><br>
+
+                       </ul>
+                    </div>
+                </div>
+                        </div>
+
+            </div>
+            <p style="font-size: 22px;"><ul><li> We will be installing <span class="boldSpan"> Raspbian Desktop </span>(Now known as<span class="boldSpan">  Raspberry Pi OS</span>) version on our RPi.</li></ul></p>
+            <div class="d-flex">
+            <p style="font-size: 22px;"><ul><li> There are three versions of <span class="boldSpan">Raspbian.</span></li>
+            <ul style="list-style-type: circle;">
+                <li><span class="boldSpan">Raspbian Lite :</span> Only CLI, no GUI.</li>
+                <li><span class="boldSpan">Raspbian Desktop :</span> Same base with an intuitive GUI.</li>
+                <li><span class="boldSpan">Raspbian Full :</span> Similar to Raspbian Desktop, but with more software directly installed.</li>
+            </ul>
+            </ul></p>
+            <img src="./images/laptop.png" height="130px" alt="laptop">
+            </div>
+            <p style="font-size: 22px;"><ul><li> The images of all the versions can be found in the official <a href="https://gpiozero.readthedocs.io/en/stable/"> <span class="text-danger font-weight-bold">Raspberry Pi </span></a> Site. You can download the desired image (<span class="command text-danger">.iso </span>or <span class="command text-danger">.img</span>) files from the site.
+            <a href="https://www.raspberrypi.com/software/operating-systems/">
+            <div style="border: 1px solid black; border-radius: 3px; padding: 20px; color: black;">
+                <p>Operating system Images - Raspberry Pi</p>
+                <p style="color: rgb(110, 101, 101); font-size: 15px;">Many operating systems are available for Raspberry Pi, including Raspberry Pi OS, our official supported operating system, and operating systems from</p><br>
+                <img src="images/rasberry.png" alt="img" width="20px" />
+                https://www.raspberrypi.com
+                /software/operating-systems/
+            </div>
+            </a>
+        </li></ul></p>
+        </div>
+        <div id="flashing">
+            <h3>Flashing</h3>
+            <p style="font-size: 22px;"><ul><li> For Flashing you can either use <span class="boldSpan">Balena Etcher</span> or <span class="boldSpan">Raspberry Pi Imager.</span></li></ul></p>
+            <p style="font-size: 22px;"><ul><li> Insert a MicroSD card into your Laptop or PC.</li></ul></p>
+          
+
+        </div>
+        <div id="balenaItcher">
+            <h3>Balena Etcher</h3>
+             <p style="font-size: 22px;"><ul><li><span class="boldSpan"> Balena</span> Etcher is one of the most widely used tools to burn operating systems files like <span class="command">.iso</span> and <span class="command">.img</span> files to your storage drive to make it a live SD card or a USB flash drive.</li></ul></p>
+            <p style="font-size: 22px;"><ul><li> Go to the official<a href="https://www.balena.io/etcher/"><span class="text-danger font-weight-bold"> Balena Etcher</span></a> site and download and install Balena Etcher.</li></ul></p>
+            <p style="font-size: 22px;"><ul><li> Then open Etcher and select the image, SD Card and then Flash! As simple as that!</li></ul></p>
+           <center><img class="etcher" src="./images/etcher.gif" height="400px" width="90%" alt="etcher"></center>
+
+        </div>
+        <div id="raspberryPiImager">
+            <h3>Raspberry Pi Imager</h3>
+
+        </div>
+        <div id="headlessSetup">
+
+        </div>
+        <div id="ssh">
+
+        </div>
+        <div id="vnc">
+
+        </div>
+        <div id="whatNext">
+
+        </div>
+
+    </div>
+    
+    <script>
+        $(".rotate").click(function () {
+    $(this).toggleClass("down");
+    if( document.getElementById("tableOfContent").style.display=="block"){
+    document.getElementById("tableOfContent").style.display="none";
+    }
+    else{
+         document.getElementById("tableOfContent").style.display="block";
+    }
+})
+        $(".rotate2").click(function () {
+    $(this).toggleClass("down");
+    if( document.getElementById("tableOfContent2").style.display=="block"){
+    document.getElementById("tableOfContent2").style.display="none";
+    }
+    else{
+         document.getElementById("tableOfContent2").style.display="block";
+    }
+})
+        $(".rotate3").click(function () {
+    $(this).toggleClass("down");
+    if( document.getElementById("tableOfContent3").style.display=="block"){
+    document.getElementById("tableOfContent3").style.display="none";
+    }
+    else{
+         document.getElementById("tableOfContent3").style.display="block";
+    }
+})
+    </script>
+  </body>
+</html>
