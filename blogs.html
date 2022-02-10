@@ -75,6 +75,8 @@
         }
         .command{
             background-color: rgb(238, 238, 238) !important;
+            padding: 5px;
+            border-radius: 3px;
         }
 
         i:hover{
@@ -334,7 +336,7 @@
             <br>
         </div>
         <div id="installation">
-            <h3>Installation</h3>
+            <h2>Installation</h2>
             <p style="font-size: 22px;"><ul><li> Before going any further make sure you have at least the following equipment with you.</li></ul></p>
             <div class="d-flex">
                         <div class="col-6">
@@ -410,29 +412,111 @@
 
         </div>
         <div id="balenaItcher">
-            <h3>Balena Etcher</h3>
+            <h4>Balena Etcher</h4>
              <p style="font-size: 22px;"><ul><li><span class="boldSpan"> Balena</span> Etcher is one of the most widely used tools to burn operating systems files like <span class="command">.iso</span> and <span class="command">.img</span> files to your storage drive to make it a live SD card or a USB flash drive.</li></ul></p>
             <p style="font-size: 22px;"><ul><li> Go to the official<a href="https://www.balena.io/etcher/"><span class="text-danger font-weight-bold"> Balena Etcher</span></a> site and download and install Balena Etcher.</li></ul></p>
             <p style="font-size: 22px;"><ul><li> Then open Etcher and select the image, SD Card and then Flash! As simple as that!</li></ul></p>
            <center><img class="etcher" src="./images/etcher.gif" height="400px" width="90%" alt="etcher"></center>
 
         </div>
+        <br>
         <div id="raspberryPiImager">
-            <h3>Raspberry Pi Imager</h3>
+            <h4>Raspberry Pi Imager</h4>
+            <p style="font-size: 22px;"><ul><li><a href="https://www.raspberrypi.com/news/raspberry-pi-imager-imaging-utility/"><span class="text-danger font-weight-bold">Raspberry Pi</span></a> Imager is a recently introduced Image Utility created by the Raspberry Community to make the process of flashing <span class="boldSpan">Raspbian</span> images on SD Cards easier.</li></ul></p>
+                  <iframe height="400" width="100%"
+      src="https://www.youtube.com/embed/ntaXWS8Lk34">
+   </iframe>
+            <p style="font-size: 22px;"><ul><li>The Imager can be downloaded from the <a href="https://www.raspberrypi.org/software/"><span class="text-danger font-weight-bold">Software Section of Raspberry Pi site.</span></a> </li></ul></p>
+            <p style="font-size: 22px;"><ul><li>Click on <span class="boldSpan">Choose OS</span> and then select Raspberry Pi OS (32-bit). If you're using <span class="boldSpan">RPi 4B</span> model, you can also go for 64 Bit Operating Systems.</li></ul></p>
+             <center><img class="etcher" src="./images/Screenshot_(4).png" height="400px" width="90%" alt="etcher"></center>
 
+            <p style="font-size: 22px;"><ul><li>Now Click Choose SD card and select your SD card.</li></ul></p>
+             <center><img class="etcher" src="./images/Screenshot_(8).png" height="400px" width="90%" alt="etcher"></center>
+
+            <p style="font-size: 22px;"><ul><li>Now click write and then your Raspberry Pi OS is been flashed onto your SD card.</li></ul></p>
+           <aside class="pink" style="padding: 13px; padding-left: 15px;">
+            <img src="images/rasberry.png" alt="img" width="29px" /><span class="boldSpan"> Normal Setup -</span> If you are not going to follow <a href="https://www.raspberrypi.org/software/"><span class="text-danger font-weight-bold">Headless Setup </span></a>given below then you can unmount the flashed MicroSD card, put it inside the RPi and connect the RPi to to your monitor, keyboard and mouse and start using it.
+            </aside>
+            <hr>
         </div>
+        <br>
         <div id="headlessSetup">
-
+            <h3>Headless Setup</h3>
+             <p style="font-size: 22px;"><ul><li>Headless RPi is an RPi that operates without Monitor, Keyboard, Mouse.</li></ul></p>
+             <p style="font-size: 22px;"><ul><li>We can still access the RPi, provided it is connected to <span class="boldSpan"> Network</span> - Be it WiFi, Ethernet.</li></ul></p>
+             <p style="font-size: 22px;"><ul><li>We can access it using various facilities like <span class="boldSpan">SSH (Secure Shell)</span> or<span class="boldSpan"> VNC (Virtual Network Computing)</span>.</li></ul></p>
+          
         </div>
         <div id="ssh">
+            <h4>SSH</h4>
+              <p style="font-size: 22px;"><ul><li><span class="boldSpan">SSH (Secure Shell) </span>basically allows a remote computer (Your laptop or PC) to connect to the <span class="boldSpan">CLI</span> of the <span class="boldSpan">Raspbian</span> on the RPi provided both are connected on network.</li></ul></p>
+              <p style="font-size: 22px;"><ul><li>If you're using <span class="boldSpan">Raspberry Pi Imager</span>, you can also enable and configure your<span class="boldSpan"> WiFi</span> and <span class="boldSpan">SSH (Secure Shell)</span>  by pressing <span class="command text-danger"> ctrl+shift+x .</span></li></ul></p>
+               <center><img class="etcher" src="./images/Untitled.png" height="400px" width="90%" alt="etcher"></center>
+
+              <p style="font-size: 22px;"><ul><li>To connect to home <span class="boldSpan">WiFi</span> connection add a file <span class="command text-danger"> wpa_supplicant.conf </span>onto the <span class="boldSpan">Boot Partition</span> of the flashed SD Card and add the below code in it. Do change the <span class="boldSpan">WiFi SSID</span> and <span class="boldSpan">Password!</span></li></ul></p>
+              <p class="command p-5" style="font-size: 14px; color: rgb(88, 86, 86); line-height: 22px; ">
+                  ctrl_interface=DIR=/var/run/
+                  wpa_supplicant GROUP=netdev <br>
+                  update_config=1 <br>
+country=IN # Your country code in ISO/IEC alpha2 Code <br> <br>
+network={ <br>
+      &emsp;&emsp; ssid="My_WiFi"    # Your WiFi Name <br>
+       &emsp;&emsp; psk="123456789"	  # Your WiFi password <br>
+      &emsp;&emsp;  key_mgmt=WPA-PSK  # Pre Shared Key Mode <br>
+}
+
+              </p>
+              <aside class="pink" style="padding: 13px; padding-left: 15px;">
+            <img src="images/rasberry.png" alt="img" width="29px" /> <span class="command text-danger"> wpa_supplicant</span> is a <span class="boldSpan">WPA (WiFi Protected Access) Supplicant </span>for Linux, BSD, Mac OS X, and Windows with support for WPA and WPA2. It is designed to act as <span class="boldSpan">"daemon"</span> program that runs in the background and as the Back-End component controlling the wireless connection.</aside>
+              <p style="font-size: 22px;"><ul><li>If you Flashed using<span class="boldSpan">Balena Etcher</span>, you will need to go through the following steps :</li></ul></p>
+           <ul style="list-style-type: circle;">
+                <li>Next, create an empty file and name it as <span class="command text-danger">ssh</span> without any extension. This will enable SSH on RPi and we will be able to connect to it from our PC or Laptop.</li>
+                <li>After that insert the SD Card and power up the RPi.</li>
+                <li>Now from the <span class="boldSpan">Remote Computer</span> (Your Laptop or PC), you can SSH into RPi using the Local IP Address of the RPi using <span class="boldSpan">mDNS over IPv4</span> with the following command.</li>
+                <div class="command p-4" style="font-size: 14px; color: rgb(49, 49, 49);"> <span class="text-danger">ssh </span>< USER_NAME > @ < HOST_NAME >.local</div>
+                <br> <aside class="pink" style="padding: 13px; padding-left: 15px;">
+            <img src="images/rasberry.png" alt="img" width="29px" />By default in RPi, the<span class="command text-danger"> USER_NAME</span> is <span class="command text-danger">pi</span> and <span class="command text-danger">HOST_NAME </span>is <span class="command text-danger">raspberrypi</span>, making the SSH command <span class="command text-danger">ssh pi@raspberrypi.local </span>.</aside>
+                <li>It will prompt for the User password, enter the default User Password <span class="command text-danger"> raspberry </span>.</li>
+                <li>You will now be able to access the Terminal of RPi.</li>
+            </ul>
 
         </div>
         <div id="vnc">
+            <h4>VNC</h4>
+
+                          <p style="font-size: 22px;"><ul><li><span class="boldSpan">VNC (Virtual Network Computing)</span> basically allows a remote computer (Your laptop or PC) to connect to the whole <span class="boldSpan">GUI</span> of the <span class="boldSpan">Raspbian</span> on RPi provided both are connected on network.</li></ul></p>
+                          <p style="font-size: 22px;"><ul><li>For VNC Server setup first of all you'll have to boot your RPi.</li></ul></p>
+                          <p style="font-size: 22px;"><ul><li>Then open terminal either through <span class="boldSpan">Normal Setup</span> or <span class="boldSpan">Headless SSH </span>and type the following command to open the Configuration Tools.</li></ul></p>
+                                          <div class="command p-4" style="font-size: 14px; color: rgb(49, 49, 49);"> <span class="text-danger">sudo </span>raspi-config</div>
+                          <p style="font-size: 22px;"><ul><li>Click on<span class="boldSpan"> Interfacing Options</span>.</li></ul></p>
+                           <center><img class="etcher" src="./images/op.png" height="400px" width="90%" alt="etcher"></center>
+                          <p style="font-size: 22px;"><ul><li>Then select <span class="boldSpan">VNC</span> option and enable the <span class="boldSpan">VNC Server</span> on Rpi.</li></ul></p>
+                           <center><img class="etcher" src="./images/op2.png" height="400px" width="90%" alt="etcher"></center>
+                          <p style="font-size: 22px;"><ul><li>Finish the process and reboot the RPi.</li></ul></p>
+                          <p style="font-size: 22px;"><ul><li>Now that we enabled <span class="boldSpan">VNC Server</span> on the RPi, we will need a client <span class="boldSpan">VNC Viewer</span> on the remote computer to access the RPi.</li></ul></p>
+                          <p style="font-size: 22px;"><ul><li>For this you will need to download and install <a href="https://www.realvnc.com/en/connect/download/viewer/"><span class="text-danger font-weight-bold">VNC Viewer</span></a> in your PC or Laptop.</li></ul></p>
+                          <p style="font-size: 22px;"><ul><li>Once installed, open the Viewer and create a New Connection by pressing <span class="command text-danger">ctrl+n</span> .</li></ul></p>
+                          <p style="font-size: 22px;"><ul><li>Type the <span class="boldSpan">IP Address</span> of your RPi or just the Hostname (default <span class="command text-danger">raspberrypi</span>) if on Local Network in the <span class="boldSpan">VNC Server Field.</span></li></ul></p>
+                          <p style="font-size: 22px;"><ul><li>You can name it for Friendly Identification as well.</li></ul></p>
+                          <p style="font-size: 22px;"><ul><li>Once done, click on the newly created connection and the write the username and password of your RPi.</li></ul></p>
+                           <aside class="pink" style="padding: 13px; padding-left: 15px;">
+            <img src="images/rasberry.png" alt="img" width="29px" />By default username and password of Raspberry Pi is <span class="command text-danger">pi</span> and <span class="command text-danger">raspberry</span> respectively.</aside>
+                          <p style="font-size: 22px;"><ul><li>You will now be able to access the GUI and do everything as if you were using the RPi’s keyboard, mouse, and monitor directly.</li></ul></p>
+                            <center><img class="etcher" src="./images/op3.png" height="400px" width="90%" alt="etcher"></center>
+                            <hr>
+                              <aside class="pink" style="padding: 13px; padding-left: 15px;">
+            <img src="images/rasberry.png" alt="img" width="29px" /><span class="boldSpan">Time for tinkering with the RPi!</span></aside>
+           <hr>
 
         </div>
+        <br>
         <div id="whatNext">
-
+            <h2>What Next?</h2>
+                <aside class="pink" style="padding: 13px; padding-left: 15px;">
+            <img src="images/rasberry.png" alt="img" width="29px" />Share your feedback, suggestions or what you want in the upcoming blogs by filling this <a href="https://forms.gle/48S6JBSCFjaviVr57"><span class="text-danger font-weight-bold">form</span></a> .</aside>
+           
         </div>
+        <hr>
 
     </div>
     
