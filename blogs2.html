@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+
+        .container{
+            background-color: rgb(255, 255, 255);
+        
+        }
+        .logo{
+            height: 30px;
+            margin-top: -5px;
+            margin-right: 5px;
+        }
+
+        .span1{
+            font-size: 14px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 100;
+            color: rgb(88, 88, 88);
+            margin: 5px;
+        }
+        .span2{
+         font-size: 16px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 100;
+            color: rgb(63, 63, 63);
+            margin: 5px;   
+        }
+       .tocTag{
+           font-size: 16px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 100;
+            color: rgb(63, 63, 63);
+        }
+        .normalP{
+            font-size: 16px;
+        }
+        .boldSpan{
+            font-weight: bold;
+        }
+        .pink{
+            background-color:rgb(255, 233, 252) !important ;
+        }
+        .green{
+            background-color: rgb(230, 243, 234) !important;
+            border-radius: 4px;
+        }
+        .fontRed{
+            color: rgb(182, 69, 69);
+        }
+        .command{
+            background-color: rgb(238, 238, 238) !important;
+            padding: 5px;
+            border-radius: 3px;
+            letter-spacing: 2px;
+        }
+        m{
+            background-color: rgb(236, 236, 236) !important;
+            padding: 4px;
+            border-radius: 3px;
+            letter-spacing: 2px;
+            color: rgb(87, 131, 87);
+            font-weight: bold;
+            font-size: 13px;
+        }
+        blue{
+            color: rgb(53, 163, 190);
+        }
+        pink{
+            color: rgb(252, 115, 137);
+        }
+        yell{
+            color: rgb(139, 139, 62);
+        }
+        green{
+            color: rgb(7, 161, 7);
+        }
+        dp{
+            color: rgb(107, 21, 64);
+        }
+
+        i:hover{
+            cursor: pointer;
+        }
+        .rotate {
+            -moz-transition: all .2s linear;
+            -webkit-transition: all .2s linear;
+            transition: all .2s linear;
+                }
+        .rotate.down {
+            -moz-transform:rotate(90deg);
+            -webkit-transform:rotate(90deg);
+            transform:rotate(90deg);
+        }
+        .rotate2 {
+            -moz-transition: all .2s linear;
+            -webkit-transition: all .2s linear;
+            transition: all .2s linear;
+        }
+        .rotate2.down {
+            -moz-transform:rotate(90deg);
+            -webkit-transform:rotate(90deg);
+            transform:rotate(90deg);
+        }
+        .rotate3 {
+        -moz-transition: all .2s linear;
+        -webkit-transition: all .2s linear;
+        transition: all .2s linear;
+            }
+        .rotate3.down {
+            -moz-transform:rotate(90deg);
+            -webkit-transform:rotate(90deg);
+            transform:rotate(90deg);
+        }
+
+      @media only screen and (max-width: 600px) {
+        .up{
+          height: 200px !important;
+        }
+        .ras{
+            height: 130px !important;
+            top: 120px !important;
+        }
+        .Rpi{
+            height: 300px;
+        }
+        .GPI{
+            height: 250px;
+        }
+        .GPI-0{
+            height: 580px;
+        }
+        .etcher{
+            height: 200px;
+        }
+        iframe{
+            height: 220px;
+        }
+        .small{
+            height: 160px;
+        }
+        
+      }
+
+    </style>
+</head>
+  <body>
+      
+    <img
+      style="height: 300px"
+      src="images/arduino-coding.jpg"
+      class="img-fluid up"
+      alt="Responsive image"
+    />
+    <img
+      style="height: 190px; position: absolute; left: 20%; top: 200px"
+      src="images/arduino-1-logo-png-transparent.png"
+      class="img-fluid  ras"
+      alt="Responsive image"
+    />
+    <div class="container col-12 col-sm-10 col-md-8 ">
+        <h1 style="margin-top: 150px;">Arduino - Overview, Basic Sketch</h1 style="margin-top: 100px;">
+        <hr>
+        <div>
+            <div style="display: flex;">
+                <img src="images/logo3.png" class="logo" alt="LOGO">
+                <h6>Electromos IIT Bhilai <span class="span1">Jul 30, 2021</span></h6>
+            </div>
+            <div>
+                <h6 style="margin-left:34px;">Contributers :<span class="span2">Raushan Kumar, Satvik V., Shreyas Pande, Jay Soni, Lohit Daksha, Rithvika Pervala, Irfan Ahamed Kodakkadan.</span></h6>
+            </div>
+            
+           
+            
+        </div>
+        <hr>
+        <div style="display: flex; background-color: rgb(230, 243, 234);">
+             <i style="margin-left: 15px;" class="fa fa-caret-right fa-2x rotate"></i>
+             <h5 style="margin-left: 20px; margin-top: 3px; color: rgb(33, 88, 33);">Table of Contents</h5>
+        </div>
+        <div id="tableOfContent" style="display: none; background-color:rgb(230, 243, 234);">
+            <div style=" padding: 10px; margin-left: 40px;">
+                <a class="tocTag" href="#Introduction">Introduction</a><br>
+                <a class="tocTag" href="#ComponentsOverview">Components Overview</a>
+                <div style="margin-left: 40px; padding: 10px;">
+                    <a class="tocTag" href="#gpioPin">GPIO PIN</a>
+                    <a class="tocTag" href="#crystalOscillator">Crystal Oscillator</a><br>
+                    <a class="tocTag" href="#voltageRegulator">Voltage Regulator</a><br>
+                    <a class="tocTag" href="#microControllar">Microcontrollar</a>
+                </div>
+                <a class="tocTag" href="#installation">Installation</a>
+                <div style="margin-left: 40px; padding: 10px;">
+                    <a class="tocTag" href="#aurdinoBoard">Aurdino Board</a><br>
+                    <a class="tocTag" href="#aurdinoIde">Aurdino IDE</a>
+                </div>
+                <a class="tocTag" href="#sketch">Sketch</a>
+                <div style="margin-left: 40px; padding: 10px;">
+                    <a class="tocTag" href="#comment">Comments</a>
+                    <div style="margin-left: 40px; padding: 10px;">
+                        <a class="tocTag" href="#mLineComment">Multi-line Comment</a><br>
+                        <a class="tocTag" href="#sLineComment">Single-line Comment</a>
+                    </div>
+                    <a class="tocTag" href="#value">Values</a>
+                    <div style="margin-left: 40px; padding: 10px;">
+                        <a class="tocTag" href="#variable">Variables</a><br>
+                        <a class="tocTag" href="#constant">Constants</a>
+                    </div>
+                    <a class="tocTag" href="#structure">Structure</a>
+                    <div style="margin-left: 40px; padding: 10px;">
+                        <a class="tocTag" href="#setup">setup()</a><br>
+                        <a class="tocTag" href="#loop">loop()</a>
+                    </div>
+                    <a class="tocTag" href="#function">Functions</a>
+                    <div style="margin-left: 40px; padding: 10px;">
+                        <a class="tocTag" href="#libraryFunction">Library Functions</a><br>
+                        <a class="tocTag" href="#customFunction">Custom Functions</a>
+                    </div>
+                </div>
+                <a class="tocTag" href="#basicSketches">Basics Sketches</a>
+                    <div style="margin-left: 40px; padding: 10px;">
+                        <a class="tocTag" href="#blinkSketch">Blink Sketch</a>
+                        <div style="margin-left: 40px; padding: 10px;">
+                            <a class="tocTag" href="#instruction">Instruction</a><br>
+                            <a class="tocTag" href="#sketch">Sketch</a><br>
+                            <a class="tocTag" href="#circuitSchematics">Circuit Schematics</a>
+                        </div>
+                    </div>
+                <a class="tocTag" href="#whatNext">What Next?</a>
+                    
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div id="Introduction">
+            <h2>Introduction</h2>
+            <p style="font-size: 24px;">
+                <ul>
+                    <li>Arduino is an <b> open-source</b> electronics platform based on <b>easy-to-use</b> hardware and software.</li><br>
+                    <ul style="list-style-type: circle;">
+                        <li>The software provided by Arduino gives a level of of <b>abstraction</b> (via functions and libraries) which helps us avoid directly interacting with the underlying hardware.</li>
+                    </ul>
+                </ul>
+
+            </p>
+            <p style="font-size: 24px;">
+                <ul>
+                    <li>Arduino boards can do a lot of stuff including :</li><br>
+                    <ul style="list-style-type: circle;">
+                        <li><b>To read inputs</b> - Light on a sensor, a finger on a button, or a Twitter message.</li><br>
+                        <li><b>Turn it into outputs</b> - Activating a motor, turning on an LED, publishing something online. </li><br>
+                    </ul>
+                </ul>
+
+            </p>
+            <p style="font-size: 24px;">
+                <ul>
+                    <li>You can tell your board what to do by sending a set of instructions to the micro-controller on the board. </li><br>
+                </ul>
+            </p>
+            <hr>
+            <br>
+        </div>
+        <div id="ComponentsOverview">
+            <h2>Components Overview</h2>
+            <div class="green p-2 pl-6 ">
+                 <img class="m-2" src="images/arduino-1-logo-png-transparent.png" alt="img" width="29px" /> In this part we will be describing an <b>Arduino Uno Board</b>
+            </div>
+            <br>
+            <center><img src="./images/Untitled_drawing.png" alt="Components" height="600px" class="col-12 Rpi"></center>
+            <br>
+            <div id="gpioPin">
+                <h3>GPIO Pins</h3>
+                <p style="font-size: 22px;">
+                <ul>
+                    <li>GPIO pins, also called as <b>General Purpose Input /Output Pins</b>, are a combination of Digital Pins and Analog Pins, Serial communication Pins Power and USB.</li><br>
+                    <ul style="list-style-type: circle;">
+                        <li>14 Digital Pins (6 PWM).</li><br>
+                        <ul style="list-style-type: square;">
+                            <li>6 Analog Pins (These are basically digital pins with ADC Support).</li><br>
+                        </ul>
+                    </ul>
+                </ul>
+                </p>
+                <p style="font-size: 22px;">
+                <ul>
+                    <li>These pins are used to give Input to the board like switch state or sensor data.</li><br>
+                </ul>
+                </p>
+                <p style="font-size: 22px;">
+                <ul>
+                    <li>Also used to show outputs like controlling LEDs, showing text etc.</li><br>
+                </ul>
+                </p>
+                <center><img src="./images/Untitled6.png" alt="Components" height="600px" class="col-12 Rpi"></center>
+
+            </div>
+            <br>
+            <div id="crystalOscillator">
+                <h3>Crystal Oscillator</h3>
+                <p style="font-size: 22px;">
+                <ul>
+                    <li>This Component helps the board in time calculation. Playing a major role in sending and receiving data from other devices.</li><br>
+                </ul>
+                </p>
+                <p style="font-size: 22px;">
+                <ul>
+                    <li>The frequency at which it works indicates the speed of the board in making decisions.</li><br>
+                </ul>
+                </p>
+                <p style="font-size: 22px;">
+                <ul>
+                    <li>The frequency is generally in the range of about 16MHz.</li><br>
+                </ul>
+                </p>
+            </div>
+            <br>
+            <div id="voltageRegulator">
+                <h3>Voltage Regulator</h3>
+                <p style="font-size: 22px;">
+                <ul>
+                    <li>This plays a major role in safety of the board by regulating the amount of voltage to prevent overheating the board.</li><br>
+                </ul>
+                </p>
+                <p style="font-size: 22px;">
+                <ul>
+                    <li>It delivers only required amount of voltage to the input of the Arduino board and controls the DC power supply utilized by the microcontroller and other peripheral devices.</li><br>
+                </ul>
+                </p>
+            </div>
+            <br>
+            <div id="microControllar">
+                <h3>Microcontrollar</h3>
+                <p style="font-size: 22px;">
+                <ul>
+                    <li>This is the brain of the board. It uses <a href="https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf"><span style="color: rgb(100, 160, 130); font-weight: bold;">AtMega328p</span></a>, an <b>8-bit</b> microcontroller.</li>
+                </ul>
+                </p>
+                <p style="font-size: 22px;">
+                <ul>
+                    <li>These are pre-programmed containing a bootloader which takes up <b>0.5 KB</b> of the <b>Flash Memory (32 KB) </b>that simplifies uploading program.</li><br>
+                </ul>
+                </p>
+            </div>
+            <hr>
+        </div>
+        <br>
+        <div id="installation">
+            <h2>Installation</h2>
+            <p style="font-size: 22px;">
+                <ul>
+                    <li>An Arduino Project is created using the following 2 main components of Arduino.</li><br>
+                    <ul style="list-style-type: circle;">
+                        <li>A working Arduino Board (duh).</li><br>
+                        <li>Type B USB cable to connect to the Arduino board.</li><br>
+                        <li>A laptop with Arduino Software (IDE).</li><br>
+                    </ul>
+                </ul>
+                </p>
+            <div id="aurdinoBoard"></div>
+                <h3>Aurdino Board</h3>
+                <p style="font-size: 22px;">
+                <ul>
+                    <li><b>Arduino Boards</b>, which include a <b>microcontroller</b> and other above mentioned necessary components. There are several types of boards available, here are some <b>entry-level boards</b> :</li><br>
+                </ul>
+                </p>
+                 <center><img src="./images/Untitled 1.png" alt="Components" height="600px" class="col-12 Rpi"></center><br>
+                 <div class="d-sm-flex">
+                     <div class="green p-2 pl-6  col-sm-8 col-12">
+                        <img class="m-2" src="images/arduino-1-logo-png-transparent.png" alt="img" width="29px" />Don't worry if you aren't able to get your hands on one of these boards. There are online platforms like <a src="https://www.tinkercad.com/"><span style="color: rgb(100, 160, 130); font-weight: bold;">TinkerCAD</span></a> where you can write code, wire connections and simulate for free. It is as simple as creating an account to get started !!!
+                    </div><br>
+                    <img src="./images/Untitled 2.png" alt="Components" height="160px" class="col-sm-4 col-12 small">
+
+                 </div>
+                 <br>
+            <div id="aurdinoIde"></div>
+                <h3>Aurdino IDE</h3>
+                <p style="font-size: 22px;">
+                <ul>
+                    <li>An <b>Integrated Development Environment (IDE).</b></li><br>
+                    <center><img src="./images/Untitled 3.png" alt="Components" height="600px" class="col-12 Rpi"></center><br>
+                    <li><b>Arduino IDE</b> is a spin-off of <b>Processing IDE</b> (an open-source IDE with a Java-based programming language) which is used to write functions in C/C++ and upload it onto the <b>Arduino compatible boards</b> to execute. </li><br>
+                    <li>It has <b>Wiring Framework Library</b> (a C/C++  library for micro-controller programming) using which one can write common input/output operations over a micro-controller easily.</li><br>
+                    <li>Download and install from the link → <a href="https://www.arduino.cc/en/software "><span style="color: rgb(100, 160, 130); font-weight: bold;">Arduino IDE</span></a> .</li><br>
+                    <div class="green p-2 pl-6 ">
+                 <img class="m-2" src="images/arduino-1-logo-png-transparent.png" alt="img" width="29px" /> <b>Note:</b>  After installing the IDE be sure to choose the right board in <b>'Tools→Board'</b>.  Connect the board to the PC using a <b>USB Cable</b>. 
+            </div>  
+                    <li><b>Now you are all set!!</b> After connecting the arduino to your computer you can upload your code and see it's execution on the board.</li><br>
+                    <li>The routine to implement any project is to first write code on the IDE, then setup hardware connections, finally upload your code to the hardware.</li><br>
+                </ul>
+                </p>
+        </div>
+        <hr>
+        <br>
+        <div id="sketch">
+            <h2>Sketch</h2>
+            <p style="font-size: 22px;">
+                <ul>
+                    <li>A sketch is the name that Arduino uses for a program. It's the unit of code that is uploaded to and run on an Arduino board.</li><br>
+                    <li>Arduino programming language can be divided in three main parts.
+                        <ul style="list-style-type: circle;">
+                        <li><b>Values</b> - Variables and Constants.</li> <br>
+                        <li><b>Structure</b> - <m>setup()</m> and <m>loop()</m></li> <br>
+                        <li><b>Functions</b> - Library Functions, Custom Functions.</li> <br>
+                    </ul>
+                    </li><br>
+                    <li>The sketch is stored using <m>.ino</m> extension (Referring to <b>Arduino</b>).</li><br>
+                    <li>Let's cover some basic syntax, semantics of an Arduino Sketch in the below section.</li><br>
+                </ul>
+            </p>
+            <hr>
+            <div id="comment">
+                <h3>Comments</h3>
+                 <p style="font-size: 22px;">
+                <ul>
+                    <li>Comments are used for documenting the code - to explain what the program does, how it works, or why it's written the way it is.</li><br>    
+                    <li>The documentation can be useful for both a person reading the code or the person who wrote the code to recollect what the code does later.</li><br>       
+                </ul>
+                </p>
+                <div id="mLineComment"></div>
+                    <h4>Multi-line Comment</h4>
+                     <p style="font-size: 22px;">
+                    <ul>
+                        <li>Everything between the <m>/*</m> and <m>*/</m> is ignored by the Arduino when it runs the sketch.</li><br>
+                    </ul>
+                    </p>
+                    <p class="command p-3" style="font-size: 14px; color: rgb(88, 86, 86); line-height: 22px; ">
+                  /*  This is a multiline comment. <br>
+ &nbsp;&nbsp;*  Line 1. <br>
+ &nbsp;&nbsp;*  Line 2. <br>
+ &nbsp;&nbsp;*  Line 3. <br>
+ &nbsp;&nbsp;*/
+              </p>
+                    <div class="green p-2 pl-6 ">
+                 <img class="m-2" src="images/arduino-1-logo-png-transparent.png" alt="img" width="29px" />The <m>*</m> at the start of each line is only there to make the comment look pretty, and isn't required.
+            </div>  <br>
+                <div id="sLineComment"></div>
+                    <h4>Single Line Comment</h4>
+                    <p style="font-size: 22px;">
+                    <ul>
+                        <li>There's another style for short, single-line comments. These start with <m>//</m> and continue to the end of the line.</li><br>
+                    </ul>
+                    </p>
+                    <p class="command p-3" style="font-size: 14px; color: rgb(88, 86, 86); line-height: 22px; ">
+                  // This is a single line comment.
+              </p>
+            </div>
+            <div id="value">
+                <h3>Values</h3><br>
+                <div id="variable"></div>
+                    <h4>Variables</h4>
+                     <a href="https://www.arduino.cc/reference/en/#functions">
+                    <div style="border: 1px solid rgb(192, 191, 191); border-radius: 3px; padding: 10px; color: black;">
+                <p>Aurdino Reference - Aurdino Reference</p>
+                <p style="color: rgb(110, 101, 101); font-size: 15px;">The Aurdino programming language Reference, organized into Functions, Variable and Constants, and Structure keywords</p>
+                <img src="images/arduino-1-logo-png-transparent.png" alt="img" width="20px" />
+               https://www.arduino.cc
+               /reference/en/
+               #functions
+            </div></a>
+                    <p style="font-size: 22px;">
+                    <ul>
+                        <li>A variable is a place for storing a piece of data. It has the following components :</li><br>
+                        <ul style="list-style-type: circle;">
+                        <li>A name - A placeholder for the variable.</li> <br>
+                        <li>A type - <m>int</m>, <m>float</m>, <m>char</m>, <m>bool</m>, <m>byte</m>  etc.</li> <br>
+                        <li>A value - Value to be stored inside the variable in accordance with the type.</li><br>
+                    </ul>
+                        <li><b>Ex</b> - Declare and define a variable to indicate which <b>Arduino Pin Number</b> we want an <b>LED</b> to be connected to.
+                            <ul style="list-style-type: circle;">
+                        <li>Declare a variable with the name <m>ledPin</m>, the type <m>int</m>, and an say initial value of <m>13</m>.</li> <br>
+                         <div class="green p-2 pl-6 ">
+                 <img class="m-2" src="images/arduino-1-logo-png-transparent.png" alt="img" width="29px" />We generally use Digital Pin <m>13</m> as an <b>LED Pin Output</b> because it already has an <b>LED</b> and <b>resistor</b> attached to it that's soldered to the board on most Arduino Boards.
+            </div> <br>
+                     <p class="command p-3" style="font-size: 14px; color: rgb(88, 86, 86); line-height: 22px; ">
+                  <blue>int</blue> ledPin <yell>=</yell> <dp>13</dp>;
+              </p> <br>
+                        <li>Every time the name <m>ledPin</m> appears in the code, its value <m>13</m> will be retrieved.</li> <br>
+                        <li>In this case, the person writing the program could have chosen not to bother creating the <m>ledPin</m> variable and instead have simply use <m>13</m> everywhere they needed to specify a pin number. </li> <br>
+                        <li>The advantage of using a variable is that it's easier to move the <b>LED</b> to a different pin - you only need to edit the one line that assigns the initial value to the variable.</li><br>
+                    </ul>
+                        </li><br>
+                    </ul>
+                    </p>
+                <div id="constant"></div>
+                    <h4>Constants</h4>
+                <a href="https://www.arduino.cc/reference/en/language/variables/constants/constants/">
+                    <div style="border: 1px solid rgb(192, 191, 191); border-radius: 3px; padding: 10px; color: black;">
+                <p>Constants</p>
+                <p style="color: rgb(110, 101, 101); font-size: 15px;">Constants are predefined expressions in the Aurdino language. They areused to make the programeasier to read.We classify constants in groups: There are two constants used to represens truth and falsity in the aurdino language: true, and false.</p>
+                <img src="images/arduino-1-logo-png-transparent.png" alt="img" width="20px" />
+                https://www.
+                arduino.cc/
+                reference
+                /en/language/variables
+                /constants/constants/
+            </div></a>
+                    <p style="font-size: 22px;">
+                    <ul>
+                        <li>There are some predefined expressions like the following already in Arduino Language</li><br>
+                         <ul style="list-style-type: circle;">
+                        <li><m>HIGH</m> <m>LOW</m> - Arduino (ATmega) will report <m>HIGH</m> if:</li><br>
+                        <li><m>INPUT</m> <m>OUTPUT</m> - Pin Modes.</li><br>
+                        <li><m>true</m> <m>false</m></li><br>
+                        <li><m>LED_BUILTIN</m> - is the number of the pin to which the on-board LED is connected (Usually  Pin 13).</li><br>
+                    </ul>
+                    </ul>
+                    </p>
+                    <hr>
+            </div>
+            <div id="structure">
+                <h3>Structure</h3>
+                <p style="font-size: 22px;">
+                    <ul>
+                        <li>Arduino Programming Language is based on <a href="https://en.wikipedia.org/wiki/Wiring_(development_platform)"><span style="color: rgb(100, 160, 130); font-weight: bold;">Wiring Library Framework </span></a>-  a C/C++
+ library which makes common input/output operations over a micro-controller much easier. </li><br>
+                        <li>Hence as per the Wiring Framework, a basic Arduino Sketch requires a minimum structure consisting only two functions:</li><br>
+                        <ul style="list-style-type: circle;">
+                            <li><m>setup()</m></li>
+                            <li><m>loop()</m></li>
+                        </ul>
+                        <li>You need to include both functions in your sketch, even if you don't need them for anything.</li><br>
+                         </ul>
+                    </p>
+                    </div>
+                    <div id="setup">
+                        
+                            <h4><m>setup()</m></h4>
+                            <p style="font-size: 22px;">
+                    <ul>
+                                <li>It is a function that is run once at the start of a program which can be used to define initial environment settings.</li><br>
+                                <li>It's a good place to do setup tasks like setting pin modes or initializing libraries. </li><br>
+                            </div>
+                             </ul>
+                    </p><div id="loop">
+                       
+                                 <h4><m>loop()</m></h4>
+                                  <p style="font-size: 22px;">
+                    <ul>
+                                    <li>It is a function that is called repeatedly until the board is powered off or reset.</li><br>
+                                    <li>This acts like the heart of the most sketches where we write most of the semantics of the program in.</li><br>
+                            </div>
+                    </ul>
+                    </p>
+                
+                   
+              
+                   
+                    <hr>
+            <div id="function">
+                <h3>Functions</h3>
+                 <a href="https://www.arduino.cc/reference/en/#functions">
+                    <div style="border: 1px solid rgb(192, 191, 191); border-radius: 3px; padding: 10px; color: black;">
+                <p>Aurdino Reference - Aurdino Reference</p>
+                <p style="color: rgb(110, 101, 101); font-size: 15px;">The Aurdino programming language Reference, organized into Functions, Variable and Constants, and Structure keywords</p>
+                <img src="images/arduino-1-logo-png-transparent.png" alt="img" width="20px" />
+               https://www.
+               arduino.cc
+               /reference/en/
+               #functions
+            </div></a>
+                <p style="font-size: 22px;">
+                    <ul>
+                        <li>A function is a named piece of code that can be used from elsewhere in a sketch. </li><br>
+                        <li>General syntax of a function in Arduino programming is similar to C/C++.</li><br>
+                         <p class="command p-3" style="font-size: 14px; color: rgb(88, 86, 86); line-height: 22px; ">
+                  return_type <pink>function_name</pink>(parameters){ <br>
+	&ensp;&ensp;//Body of the Function <br>
+}
+              </p>
+              <ul style="list-style-type: circle;">
+                        <li>The code between the { and } is called the <b>body</b> of the function - what the function does.</li><br>
+                        <ul style="list-style-type: square;">
+                        <li>Applying that syntax on the basic sketch functions - <m>setup()</m> and <m>loop()</m> we get</li><br>
+                          <p class="command p-3" style="font-size: 14px; color: rgb(88, 86, 86); line-height: 22px; ">
+                  <blue>void setup</blue>(){<br>
+	&ensp;&ensp;//Setup Instructions go here <br>
+} <br>
+<br>
+<blue>void loop</blue>(){ <br>
+	&ensp;&ensp;//Main code goes here <br>
+}
+
+              </p>
+                    </ul>
+                    </ul>
+                       
+                        <li>You can <b>call</b> a function that's already been defined (either in your sketch or as part of the <a href="https://www.arduino.cc/reference/en/"><span style="color: rgb(100, 160, 130); font-weight: bold;">Arduino language</span></a> Library) using the function's <m>function_name(parameters)</m>.</li><br>
+                    </ul>
+                </p>
+                <div id="libraryFunction"></div>
+                    <h4>Library Functions</h4>
+                    <p style="font-size: 22px;">
+                    <ul>
+                        <li>Arduino Language Provides some in-built functions using the <b>Wiring Framework Library.</b>  </li><br>
+                        <li>Some of the most commonly used functions like <m>pinMode()</m> <m>digitalWrite()</m> <m>delay()</m> etc., will be explored in the further sections of this blog.</li><br>
+                    </ul>
+                </p>
+                <div id="customFunction"></div>
+                    <h4>Custom Functions</h4>
+                    <p style="font-size: 22px;">
+                    <ul>
+                        <li>Arduino Programming also allows defining custom functions similarly to C/C++.</li><br>
+                        <li>We just need to use the above syntax for defining the function and write what the function does in the <b>body</b> of the function.</li><br>
+                        <li>Ex : A function <m>multiply(x,y)</m> to multiply two numbers - <m>x</m> and <m>y</m>.</li><br>
+                    </ul>
+                </p>
+                 <p class="command p-3 pl-5" style="font-size: 14px; color: rgb(88, 86, 86); line-height: 22px; ">
+                 
+              
+              <blue>void setup</blue>(){<br>
+  &ensp;&ensp;<green>Serial</green>.<pink>begin</pink>(<dp>9600</dp>);<br>
+	&ensp;&ensp;<blue>int</blue> i <yell>=</yell> <dp>2</dp>;<br>
+  &ensp;&ensp;<blue>int</blue> j <yell>=</yell> <dp>3</dp>;<br>
+  &ensp;&ensp;<blue>int</blue> k;<br>
+}<br>
+<br>
+<blue>void loop</blue>() {<br>
+  &ensp;&ensp;k <yell>=</yell> <pink>multiply</pink>(i, j); // k now contains 6<br>
+  &ensp;&ensp;<green>Serial</green>.<pink>println</pink>(k);<br>
+  &ensp;&ensp;<pink>delay</pink>(<dp>500</dp>);<br>
+}<br>
+<br>
+//Returns the Product of the given parameters - i and j<br>
+<blue>int</blue> <pink>multiply</pink>(<blue>int</blue> x, <blue>int</blue> y){<br>
+  &ensp;&ensp;<blue>int</blue> result;<br>
+  &ensp;&ensp;result <yell>=</yell> x * y;<br>
+  &ensp;&ensp;<blue>return</blue> result;<br>
+}</p>
+            </div>
+            <hr>
+        </div>
+        <div id="basicSketches">
+            <h2>Basics Sketches</h2>
+            <p style="font-size: 22px;">
+                    <ul>
+                        <li>Now that we've covered some basics of Arduino Programming, Let's try implementing some basic sketches available on the Arduino IDE. </li><br>
+                        <li>To open the <b>Example</b> Sketches open Arduino IDE and go to <b>File → Examples → Built-in Examples.</b></li> <br>
+               <center><img src="./images/built_in_examples.svg" alt="Components" height="500px" class="col-12 Rpi"></center>
+
+                    </ul>
+
+                </p>
+           
+            <div id="blinkSketch">
+                <h3>Blink Sketch</h3>
+                <a href="https://www.arduino.cc/en/Tutorial/BuiltInExamples/Blink">
+                    <div class="d-flex">
+                    <div class="col-8"  style="border: 1px solid rgb(192, 191, 191); border-radius: 3px; padding: 10px; color: black;">
+                <p>Blink</p>
+                <p style="color: rgb(110, 101, 101); font-size: 15px;">This example shows the simplest thing you can do with an Arduino to see physical output: it blinks the on-board LED. optional this example uses the built-</p>
+                <img src="images/arduino-1-logo-png-transparent.png" alt="img" width="20px" />
+              https://www.
+              arduino.cc/en/
+              Tutorial/
+              BuiltInExamples/
+              Blink
+            </div>
+              <img src="./images/blink.png" alt="Components" height="160px" class="col-4 Rpi">
+
+        </div></a>
+                <p style="font-size: 22px;">
+                    <ul>
+                        <li>The infamous <b>Blinking LED Sketch</b> is one of the most used basic sketches for introducing oneself to the world of Arduino. </li><br>
+                        <li>This example shows the simplest thing you can do with an Arduino to see <b>physical output</b> - It blinks the <b>on-board LED</b> and an <b>externally attached LED</b>.</li><br>
+                    </ul>
+                </p>
+                <div id="instruction"></div>
+                    <h4>Instruction</h4>
+                    <p style="font-size: 22px;">
+                    <ul>
+                        <li>Go to Tools option from <b>Menu Bar → Tools → Select Board </b>(Arduino Uno or Nano) and ports.</li><br>
+                        <ul style="list-style-type: circle;">
+                            <li>In <a href="https://docs.arduino.cc/software/ide-v2/"><span style="color: rgb(100, 160, 130); font-weight: bold;">Arduino IDE 2.0</span></a> you can directly Select board from the Menu Bar in the <b>Select Board Toggle</b>.</li>
+                        </ul>
+                         <center><img src="./images/Untitled 4.png" alt="Components" height="600px" class="col-12 Rpi"></center><br>
+                        <li><b>Components</b> - 220/330 ohm resistor (If you use external LED).</li><br>
+                        <li>Load the below sketch into the Arduino using <b>Upload Sketch Option.</b></li><br>
+                         <center><img src="./images/serial-monitor-img02.png" alt="Components" height="500px" class="col-12 Rpi"></center><br>
+                        <li>Follow the below <b>circuit schematics</b> and provide power. </li><br>
+                        <ul style="list-style-type: circle;">
+                            <li>Arduino Board must be connected to the <b>Power Source</b> (In our case <b>PC</b>) throughout run time.</li>
+                        </ul>
+                    </ul>
+                </p>
+                <div id="sketch"></div>
+                    <h4>Sketch</h4>
+                     <p class="command p-3 pl-5" style="font-size: 14px; color: rgb(88, 86, 86); line-height: 22px; ">
+
+                      
+/* <br>
+  &ensp;&ensp;Blink <br>
+ &ensp;&ensp;<br>
+  &ensp;&ensp;Turns an LED on for one second, then off for one second, repeatedly. <br>
+ &ensp;&ensp;<br>
+  &ensp;&ensp;Most Arduinos have an on-board LED you can control. On the UNO, MEGA and ZERO <br>
+  &ensp;&ensp;it is attached to digital pin 13, on MKR1000 on pin 6. LED_BUILTIN is set to <br>
+  &ensp;&ensp;the correct LED pin independent of which board is used. <br>
+  &ensp;&ensp;If you want to know what pin the on-board LED is connected to on your Arduino <br>
+  &ensp;&ensp;model, check the Technical Specs of your board at: <br>
+  &ensp;&ensp;https://
+  www.arduino.cc/
+  en/Main/
+  Products <br>
+ &ensp;&ensp;<br>
+  &ensp;&ensp;modified 8 May 2014 <br>
+  &ensp;&ensp;by Scott Fitzgerald <br>
+  &ensp;&ensp;modified 2 Sep 2016 <br>
+  &ensp;&ensp;by Arturo Guadalupi <br>
+  &ensp;&ensp;modified 8 Sep 2016 <br>
+  &ensp;&ensp;by Colby Newman <br>
+ &ensp;&ensp;<br>
+  &ensp;&ensp;This example code is in the public domain. <br>
+ &ensp;&ensp;<br>
+  &ensp;&ensp;https://
+  www.arduino.cc
+  /en/
+  Tutorial/
+  BuiltInExamples/
+  Blink <br>
+*/ <br>
+ <br>
+// the setup function runs once when you press reset or power the board <br>
+<blue>void setup</blue>() { <br>
+  &ensp;&ensp;// initialize digital pin LED_BUILTIN as an output. <br>
+  &ensp;&ensp;<pink>pinMode</pink>(<dp>LED_BUILTIN</dp>, <dp>OUTPUT</dp>); <br>
+} <br>
+ <br>
+// the loop function runs over and over again forever <br>
+<blue>void loop</blue>() { <br>
+  &ensp;&ensp;<pink>digitalWrite</pink>(<dp>LED_BUILTIN, HIGH</dp>);   // turn the LED on (HIGH is the voltage level) <br>
+  &ensp;&ensp;<pink>delay</pink>(<dp>1000</dp>);                       // wait for a second <br>
+  &ensp;&ensp;<pink>digitalWrite</pink>(<dp>LED_BUILTIN, LOW</dp>);    // turn the LED off by making the voltage LOW <br>
+  &ensp;&ensp;<pink>delay</pink>(<dp>1000</dp>);                       // wait for a second <br>
+	} <br>
+
+                 </p>
+                    <p style="font-size: 22px;">
+                    <ul>
+                        <li><m>pinmode()</m> -  Tells the Board to set the given Pin to either <m>INPUT</m> or <m>OUTPUT</m>.</li><br>
+                        <li><m>digitalWrite()</m> - Tell the Board to set the given <b>Digital Pin</b> Voltage Level to <m>HIGH</m> or <m>LOW</m>. </li><br>
+                        <li><m>delay()</m> - Tells the board to do nothing for given amount of milliseconds.</li><br>
+                    </ul>
+                </p>
+                <div id="circuitSchematics"></div>
+                    <h4>Circuit Schematics</h4>
+                    
+                    <p style="font-size: 22px;">
+                    <ul>
+                        <li>Start the Simulation and you can see both the on-board and the <b>external LED</b> Blinking!</li><br>
+                    </ul>
+                </p>
+            </div>
+            <hr>
+        </div>
+        <div id="whatNext"></div>
+            <h2>What Next?</h2>
+            <div class="green p-2 pl-6 ">
+                 <img class="m-2" src="images/arduino-1-logo-png-transparent.png" alt="img" width="29px" />Share your feedback, suggestions or what you want in the upcoming blogs by filling this <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNzUSIyGK-BQzY6b0WoPFUYM8NEpcCmByO5qO_Oa-DK6L-LA/viewform"><span style="color: rgb(100, 160, 130); font-weight: bold;"> form</span></a>.
+            </div> 
+        <hr>
+    </div>    
+    <script>
+        $(".rotate").click(function () {
+    $(this).toggleClass("down");
+    if( document.getElementById("tableOfContent").style.display=="block"){
+    document.getElementById("tableOfContent").style.display="none";
+    }
+    else{
+         document.getElementById("tableOfContent").style.display="block";
+    }
+})
+        $(".rotate2").click(function () {
+    $(this).toggleClass("down");
+    if( document.getElementById("tableOfContent2").style.display=="block"){
+    document.getElementById("tableOfContent2").style.display="none";
+    }
+    else{
+         document.getElementById("tableOfContent2").style.display="block";
+    }
+})
+        $(".rotate3").click(function () {
+    $(this).toggleClass("down");
+    if( document.getElementById("tableOfContent3").style.display=="block"){
+    document.getElementById("tableOfContent3").style.display="none";
+    }
+    else{
+         document.getElementById("tableOfContent3").style.display="block";
+    }
+})
+    </script>
+  </body>
+</html>
