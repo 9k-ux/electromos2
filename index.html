@@ -1,217 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-	<meta content="width=device-width, initial-scale=1" name="viewport" />
-
 <head>
-	<style>
-		.btn2{
-		width: 240px;
-		height:70px;
-		color: white;
-		font-size: 30px;
-		background-color: rgb(23, 122, 214);
-		/* border: 2px solid red; */
-		border-radius: 1000px;
-		box-shadow: 10px;
-		}
-		
-		@media (hover: hover) {
-			.btn2:hover{
-			background-color: green;
-			
-		}
-}
-
-@media screen and (max-width: 400px) {
-  .btn2{
-	  width: 300px;
-	  height: 90px;
-	  position: relative;
-	  right:50px;
-  }
-}
-	</style>
-   
-	<meta charset="UTF-8">
-	<title>Collecting Data</title>
-	<script src=
-"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-	</script>
-
-	<link rel="stylesheet" href=
-"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-		integrity=
-"sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-		crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+<style>
+    .button {
+  color: green;
+  border: none;
+}
 
-<body class="container" style="margin-top: 50px;
-	width: 50%; height:auto;">
-	
-	<h2 class="text-primary" style=
-		"margin-left: 15px; margin-bottom: 100px">
-	              AGRONOMIST 
-	</h2>
+.button-hover:hover {
+  background: yellow;
+  border: none;
+}
+
+.button:active {
+  border: none;
+}
+</style>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<button id='myButton' class='button button-hover'>Hello</button>
+
     
-	<!-- <form class="container" id="contactForm">
-		<div class="card">
-			<div class="card-body">
-				<div class="form-group">
-					<label for="exampleFormControlInput1">
-						Enter Your Name
-					</label>
-					
-					<input type="text" class="form-control"
-					id="name" placeholder="Enter your name">
-				</div>
+    <script>
+        var button = document.getElementById('myButton');
 
-				<div class="form-group">
-					<label for="exampleFormControlInput1">
-						Email address
-					</label>
-					
-					<input type="email" class="form-control"
-					id="email" placeholder="name@example.com">
-				</div>
-			</div>
-			<button type="submit" class="btn btn-primary"
-				style="margin-left: 15px; margin-top: 10px">
-				Submit
-			</button>
-		</div>
-	</form>
-    <h1 id ='value'> Hello</h1>
-    <table style="width:100%" id="ex-table">
-        <tr id="tr">
-          <th>Tipo de la Denuncia:</th>
-          <th>Dirección:</th> 
-          <th>Descripción:</th>
-          <th>Correo:</th>
-          <th>Creda por:</th>
-          <th>Imagen</th>
-          <th>Lat - Long</th>
-       </table> 
-	   <!-- <h1 id = "good"> hello</h1> -->
-	   <!-- <P id="test1">helo miss</P> -->
-	    
+button.ontouchstart = function(e) {
+  console.log('ontouchstart');
+  $('.button').removeClass('button-hover');
+  startIntervalToResetHover();
+};
+
+button.onclick = function(e) {
+  console.log('onclick');
+}
+
+var intervalId;
+
+function startIntervalToResetHover() {
+  // Clear the previous one, if any.
+  if (intervalId) {
+    clearInterval(intervalId);
+  }
+  
+  intervalId = setInterval(function() {
+    // Stop if the hover class already exists.
+    if ($('.button').hasClass('button-hover')) {
+      clearInterval(intervalId);
+      intervalId = null;
+      return;
+    }
     
-	<script src=
-"https://www.gstatic.com/firebasejs/3.7.4/firebase.js">
-	</script>
-	 <div onmouseover="myFunction()" onmouseout="myFunction2()">
-		<button class ='btn2'>ON</button>
-	 </div>
-   
+    // Checking of hover state from 
+    // http://stackoverflow.com/a/8981521/2669960.
+    var isHovered = !!$('.button').filter(function() {
+      return $(this).is(":hover");
+    }).length;
     
-	
-	<script>
-		var firebaseConfig = {
-	    apiKey: "AIzaSyBal-immo1KEnh2jecPCPt-X0OT1FZDZu0",
-        authDomain: "led1-67fcc.firebaseapp.com",
-        databaseURL: "https://led1-67fcc-default-rtdb.firebaseio.com",
-        projectId: "led1-67fcc",
-        storageBucket: "led1-67fcc.appspot.com",
-        messagingSenderId: "929912397970",
-        appId: "1:929912397970:web:65053a9f01fe5f8c01064b",
-        measurementId: "G-TQER3M522L"
-		};
-		var content2='';
-
-		firebase.initializeApp(firebaseConfig);
-
-		var messagesRef = firebase.database()
-			.ref('client');
-		
-		document.getElementById('contactForm')
-			.addEventListener('submit', submitForm);
-
-		function submitForm(e) {
-			e.preventDefault();
-
-			// Get values
-			var name = getInputVal('name');
-			var email = getInputVal('email');
-
-			saveMessage(name, email);
-			document.getElementById('contactForm').reset();
-		}
-
-		// Function to get get form values
-		function getInputVal(id) {
-			return document.getElementById(id).value;
-		}
-
-		// Save message to firebase
-		function saveMessage(name, email) {
-			var newMessageRef = messagesRef.push();
-			newMessageRef.set({
-				name: name,
-				email: email,
-			});
-		}
-        var db = firebase.database();
-//         var ref = firebase.database().ref("Collected Data");
-
-// ref.on("value", function(snapshot) {
-//   snapshot.forEach(function(childSnapshot) {
-//     var childData = childSnapshot.val();
-//     console.log(childData);
-//   });
-var id;
-// });
-
-var ref = firebase.database().ref('my');
-
-
-ref.on("value", function(snapshot){
-	
- snapshot.forEach(function(childSnapshot){
-  var childData = childSnapshot.val();
-//   id=childData.light2;
-//   console.log(id);
-  console.log(id);
-  var content = '';
-  var content2 = '';
-  
-  content +='<tr>';
-                // content += '<td>' + childData + '</td>';
-                content += '<td>' + childData + '</td>';
-				content2+= childData;
-
-               
-                
-                content += '</tr>';
-
-         $('#ex-table').append(content);
-		 $("#test1").text("Hello world!");
-  
- 
-  
- });
-});
-
-
-        
-
-       function myFunction(){
-        db.ref("/LED_STATUS").set(1);
-        }
-        function myFunction2(){
-        db.ref("/LED_STATUS").set(0);
-        }
-        firebase.initializeApp(firebaseConfig);
-        var refer = firebase.database().ref("email")
-
-refer.once("value", function(snapshot){
-   console.log(snapshot.val());
-}, function (error){
-   console.log("Error: " + error.code);
-});
-
-	</script>
-	<script>
-	 $("#test1").text('lalit mheta');	
-   </script>
+    if (isHovered) {
+      console.log('Hover state is active');
+    } else {
+      console.log('Hover state is inactive');
+      $('.button').addClass('button-hover');
+      console.log('Added back the button-hover class');
+      
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+  }, 1000);
+}
+    </script>
 </body>
-
 </html>
