@@ -146,8 +146,10 @@
 	 </div>
 	 <div onmouseover="myFunction3()">
 
-		<button class ='btn2'>OFF</button>
+		<button class ='btn2' onclick="location.reload()">OFF</button>
+		       
 	 </div>
+	 
 	<!-- <button onclick="myfunction()">onn</button> -->
 	<!-- <button onclick="myfunction2()">onn</button> -->
 
@@ -254,8 +256,10 @@ ref.on("value", function(snapshot){
        function myFunction(){
         db.ref("/LED_STATUS").set(1);
 	
-		setTimeout(myFunction2, 8000);
-		setTimeout(refresh,2000);
+		setTimeout(myFunction2,8000);
+		// setTimeout(refresh,2000);
+		setTimeout(location.onload(),3000);
+		
 		
 
         }
@@ -265,8 +269,11 @@ ref.on("value", function(snapshot){
 
 		function myFunction3(){
         db.ref("/LED_STATUS1").set(1);
-		setTimeout(myFunction4, 8000);
-		setTimeout(refresh,2000);
+		
+		setTimeout(myFunction4,8000);
+		
+		// setTimeout(refresh,2000);
+		
 		
 
         }
