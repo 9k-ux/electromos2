@@ -1,7 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
 
 <head>
+	<style>
+		.btn2{
+		width: 240px;
+		height:70px;
+		color: white;
+		font-size: 30px;
+		background-color: rgb(23, 122, 214);
+		/* border: 2px solid red; */
+		border-radius: 1000px;
+		box-shadow: 10px;
+		}
+		.btn2:hover{
+			background-color: green;
+			
+		}
+
+@media screen and (max-width: 400px) {
+  .btn2{
+	  width: 300px;
+	  height: 90px;
+	  position: relative;
+	  right:50px;
+  }
+}
+	</style>
    
 	<meta charset="UTF-8">
 	<title>Collecting Data</title>
@@ -20,11 +46,11 @@
 	width: 50%; height:auto;">
 	
 	<h2 class="text-primary" style=
-		"margin-left: 15px; margin-bottom: 10px">
-		Hey There,Help Us In Collecting Data
+		"margin-left: 15px; margin-bottom: 100px">
+	              AGRONOMIST 
 	</h2>
     
-	<form class="container" id="contactForm">
+	<!-- <form class="container" id="contactForm">
 		<div class="card">
 			<div class="card-body">
 				<div class="form-group">
@@ -62,12 +88,18 @@
           <th>Imagen</th>
           <th>Lat - Long</th>
        </table> 
-
+	   <!-- <h1 id = "good"> hello</h1> -->
+	   <!-- <P id="test1">helo miss</P> -->
+	    
+    
 	<script src=
 "https://www.gstatic.com/firebasejs/3.7.4/firebase.js">
 	</script>
-    <button onclick="myFunction()">on</button>
-    <button onclick="myFunction2()">Off</button>
+	 <div onmouseover="myFunction()" onmouseout="myFunction2()">
+		<button class ='btn2'>ON</button>
+	 </div>
+   
+    
 	
 	<script>
 		var firebaseConfig = {
@@ -80,6 +112,7 @@
         appId: "1:929912397970:web:65053a9f01fe5f8c01064b",
         measurementId: "G-TQER3M522L"
 		};
+		var content2='';
 
 		firebase.initializeApp(firebaseConfig);
 
@@ -124,23 +157,30 @@
 var id;
 // });
 
-var ref = firebase.database().ref("LED_STATUS");
+var ref = firebase.database().ref('my');
 
 
 ref.on("value", function(snapshot){
+	
  snapshot.forEach(function(childSnapshot){
   var childData = childSnapshot.val();
-  id=childData.email;
+//   id=childData.light2;
+//   console.log(id);
   console.log(id);
   var content = '';
+  var content2 = '';
+  
   content +='<tr>';
+                // content += '<td>' + childData + '</td>';
                 content += '<td>' + childData + '</td>';
-                content += '<td>' + id + '</td>';
+				content2+= childData;
+
                
                 
                 content += '</tr>';
 
          $('#ex-table').append(content);
+		 $("#test1").text("Hello world!");
   
  
   
@@ -166,6 +206,9 @@ refer.once("value", function(snapshot){
 });
 
 	</script>
+	<script>
+	 $("#test1").text('lalit mheta');	
+   </script>
 </body>
 
 </html>
