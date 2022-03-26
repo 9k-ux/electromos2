@@ -1,83 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    .button {
-  color: green;
-  border: none;
-  height: 100px;
-  width: 200px;
-  font-size: 70px;
-  color: white;
-  border-radius: 1000px;
-}
-
-.button-hover:hover {
-  background: yellow;
-  border: none;
-}
-
-.button:active {
-  border: none;
-}
-</style>
-<body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<button id='myButton' class='button button-hover' >Hello</button>
-
-    
-    <script>
-        var button = document.getElementById('myButton');
-
-button.ontouchstart = function(e) {
-  console.log('ontouchstart');
-  $('.button').removeClass('button-hover');
-  startIntervalToResetHover();
-};
-
-button.onclick = function(e) {
-  console.log('onclick');
-}
-
-var intervalId;
-
-function startIntervalToResetHover() {
-  // Clear the previous one, if any.
-  if (intervalId) {
-    clearInterval(intervalId);
-  }
+<html>
   
-  intervalId = setInterval(function() {
-    // Stop if the hover class already exists.
-    if ($('.button').hasClass('button-hover')) {
-      clearInterval(intervalId);
-      intervalId = null;
-      return;
-    }
-    
-    // Checking of hover state from 
-    // http://stackoverflow.com/a/8981521/2669960.
-    var isHovered = !!$('.button').filter(function() {
-      return $(this).is(":hover");
-    }).length;
-    
-    if (isHovered) {
-      console.log('Hover state is active');
-    } else {
-      console.log('Hover state is inactive');
-      $('.button').addClass('button-hover');
-      console.log('Added back the button-hover class');
-      
-      clearInterval(intervalId);
-      intervalId = null;
-    }
-  }, 1000);
-}
+<head>
+    <style>
+        #btn {
+            background-color: #0dad78;
+            margin: 3%;
+            font-size: 30px;
+        }
+  
+        .btn2:hover {
+            background-color: #ccf6c8 !important;
+            /*Hover effect is added to btn2 class*/
+        }
+    </style>
+</head>
+  
+<body onload="hover()">
+    <button type="button" id="btn">Submit</button>
+  
+    <script>
+        function hover() {
+            function is_touch_enabled() {
+  
+                // Check if touch is enabled
+                return "ontouchstart"
+                    in window || navigator.maxTouchPoints > 0
+                    || navigator.msMaxTouchPoints > 0;
+            }
+            if (!is_touch_enabled()) {
+  
+                // If touch is not enabled, add "btn2" class
+                var b = document.getElementById("btn");
+                b.classList.add("btn2");
+            }
+        }
     </script>
 </body>
+  
 </html>
