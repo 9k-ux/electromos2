@@ -255,7 +255,7 @@ ref.on("value", function(snapshot){
         db.ref("/LED_STATUS").set(1);
 	
 		setTimeout(myFunction2, 8000);
-		setTimeout(location.reload(),3000);
+		setTimeout(refresh,2000);
 		
 
         }
@@ -266,10 +266,14 @@ ref.on("value", function(snapshot){
 		function myFunction3(){
         db.ref("/LED_STATUS1").set(1);
 		setTimeout(myFunction4, 8000);
-		setTimout(location.reload(),3000);
+		setTimeout(refresh,2000);
 		
 
         }
+		function refresh(){
+			location.reload();
+
+		}
         function myFunction4(){
         db.ref("/LED_STATUS1").set(0);
         }
