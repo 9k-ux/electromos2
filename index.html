@@ -139,11 +139,11 @@
 	<script src=
 "https://www.gstatic.com/firebasejs/3.7.4/firebase.js">
 	</script>
-	 <div onmouseover="myFunction()" >
+	 <div onmouseover="myFunction()" onmouseout="my()" >
 
 		<button class ='btn2'>ON</button>
 	 </div>
-	 <div onmouseover="myFunction3()">
+	 <div onmouseover="myFunction3()" onmouseout="my()">
 
 		<button class ='btn2'>OFF</button>
 	 </div>
@@ -255,6 +255,9 @@ ref.on("value", function(snapshot){
 		setTimeout(myFunction2, 10000);
 
         }
+		function my(){
+			console.log("hello");
+		}
         function myFunction2(){
         db.ref("/LED_STATUS").set(0);
         }
