@@ -121,7 +121,8 @@
 	   <!-- <h1 id = "good"> hello</h1> -->
 	   <div class="cll">
 		<h1>STATUS</h1>
-		<P class ="pd" id="test1"></P> 
+		<!-- <P class ="pd" id="test1">OFF</P>  -->
+		<p class ="pd" id="test2">OFF</p>
 	   </div>
 	
 	   <style>
@@ -231,12 +232,12 @@ ref.on("value", function(snapshot){
                 
                 
 
-         $('#ex-table').append(content);
+        
 		 if(content=='1'){
-			$("#test1").text("ON");
+			$("#test2").text("ON");
 		 }
 		 else{
-			$("#test1").text("OFF"); 
+			$("#test2").text("OFF"); 
 		 }
 		
   
@@ -252,7 +253,10 @@ ref.on("value", function(snapshot){
 
        function myFunction(){
         db.ref("/LED_STATUS").set(1);
-		setTimeout(myFunction2, 10000);
+	
+		setTimeout(myFunction2, 8000);
+		setTimeout(location.reload(),3000);
+		
 
         }
         function myFunction2(){
@@ -261,7 +265,9 @@ ref.on("value", function(snapshot){
 
 		function myFunction3(){
         db.ref("/LED_STATUS1").set(1);
-		setTimeout(myFunction4, 9000);
+		setTimeout(myFunction4, 8000);
+		setTimout(location.reload(),3000);
+		
 
         }
         function myFunction4(){
