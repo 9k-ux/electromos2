@@ -141,12 +141,12 @@
 "https://www.gstatic.com/firebasejs/3.7.4/firebase.js">
 	</script>
 	 <div onmouseover="myFunction()" >
-
+       
 		<button class ='btn2'>ON</button>
 	 </div>
 	 <div onmouseover="myFunction3()">
 
-		<button class ='btn2' onclick="location.reload()">OFF</button>
+		<button class ='btn2' >OFF</button>
 		       
 	 </div>
 	 
@@ -258,13 +258,14 @@ ref.on("value", function(snapshot){
 	
 		setTimeout(myFunction2,8000);
 		// setTimeout(refresh,2000);
-		setTimeout(location.onload(),3000);
+		
 		
 		
 
         }
         function myFunction2(){
         db.ref("/LED_STATUS").set(0);
+		window.location.reload();
         }
 
 		function myFunction3(){
@@ -283,6 +284,7 @@ ref.on("value", function(snapshot){
 		}
         function myFunction4(){
         db.ref("/LED_STATUS1").set(0);
+		window.location.reload();
         }
 
 
